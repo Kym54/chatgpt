@@ -47,7 +47,7 @@ class _ModelDropDownWidgetState extends State<ModelDropDownWidget> {
                       value: snapshot.data![index].id,
                       child: TextWidget(
                         label: snapshot.data![index].id,
-                        fontSize: 15,)
+                        fontSize: 15)
                   )
               ),
               onChanged: (value){
