@@ -152,6 +152,15 @@ class _ChatScreenState extends State<ChatScreen> {
   Future <void> sendMessageFCT({
     required ModelsProvider modelsProvider,
     required ChatProvider chatProvider})async{
+    if(_isTyping){
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: TextWidget(
+              label:"You can't send multiple messages"
+          ),
+            backgroundColor: Colors.red,
+          )
+      );
+    }
     if(textEditingController.text.isEmpty){
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: TextWidget(
